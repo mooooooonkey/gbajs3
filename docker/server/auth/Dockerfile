@@ -3,6 +3,7 @@ FROM golang:alpine as builder
 WORKDIR /app/
 COPY ./server/auth /app/
 ENV GO111MODULE=on
+RUN go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
 RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-w -s' -o authserver
 

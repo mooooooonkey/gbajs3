@@ -37,11 +37,20 @@ if [ "$1" = "nginx" -o "$1" = "nginx-debug" ]; then
 fi
 
 #custom
-echo >&3 "$0: Configuring syslog and fail2ban"
-#start syslog service
-rsyslogd -n &
-#start fail2ban
-fail2ban-server -f -x -v start &
+#echo >&3 "$0: Configuring syslog and fail2ban"
+## Start syslog service
+#echo >&3 "$0: Starting syslog service..."
+#exec rsyslogd -n || {
+#    echo >&3 "$0: Failed to start syslog service";
+#    exit 1;
+#}
+
+# Start fail2ban
+#echo >&3 "$0: Starting fail2ban service..."
+#exec fail2ban-server -f -x -v start || {
+#    echo >&3 "$0: Failed to start fail2ban service";
+#    exit 1;
+#}
 
 #finish nginx default entrypoint
 exec "$@" 

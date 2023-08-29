@@ -4,6 +4,7 @@ WORKDIR /app/
 COPY ./server/admin /app/
 RUN apk update && apk add make
 ENV GO111MODULE=on
+RUN go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
 RUN go mod download
 RUN make build
 

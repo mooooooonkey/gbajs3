@@ -2,6 +2,8 @@ version: '2.1'
 services:
     webserver:
         image: nginx
+        privileged: true
+        restart: always
         logging:
             options:
                 max-size: '20m'
@@ -27,6 +29,7 @@ services:
 
     gba-admin-server:
         image: gba-admin-server
+        restart: always
         logging:
             options:
                 max-size: '20m'
@@ -54,6 +57,7 @@ services:
 
     gba-auth-server:
         image: gba-auth-server
+        restart: always
         logging:
             options:
                 max-size: '20m'
@@ -81,6 +85,7 @@ services:
 
     gba-postgres:
         image: gba-postgres
+        restart: always
         logging:
             options:
                 max-size: '20m'

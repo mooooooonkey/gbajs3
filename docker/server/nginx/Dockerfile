@@ -21,6 +21,10 @@ ARG CLIENT_HOST
 RUN sed -i "s;<CLIENT_HOST>;${CLIENT_HOST};" /etc/nginx/conf.d/default.conf
 COPY --from=minifier /var/www /var/www
 
+# 使用阿里云的 alpine 镜像源
+RUN echo "https://mirrors.aliyun.com/alpine/v3.12/main/" > /etc/apk/repositories && \
+    echo "https://mirrors.aliyun.com/alpine/v3.12/community/" >> /etc/apk/repositories
+
 # install fail2ban, fail2ban config
 RUN apk add rsyslog fail2ban
 
@@ -32,7 +36,6 @@ ENV PATH="${PATH}:/etc/fail2ban/custom/"
 RUN touch /var/log/fail2ban.log
 
 COPY ./docker/server/nginx/entrypoint.sh /entrypoint.sh
-
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["nginx", "-g", "daemon off;"]
