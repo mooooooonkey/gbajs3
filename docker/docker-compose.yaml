@@ -91,6 +91,8 @@ services:
                 max-size: '20m'
                 max-file: '3'
             driver: json-file
+        ports:
+            - "5432:5432"
         build:
             context: .
             dockerfile: ./server/postgres/Dockerfile
