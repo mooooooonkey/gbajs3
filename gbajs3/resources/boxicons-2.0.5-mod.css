@@ -2,16 +2,16 @@
 	font-family: 'boxicons';
 	font-weight: normal;
 	font-style: normal;
-	src: url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.eot');
-	src: url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.eot')
+	src: url('./fonts/boxicons.eot');
+	src: url('./fonts/boxicons.eot')
 			format('embedded-opentype'),
-		url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.woff2')
+		url('./fonts/boxicons.woff2')
 			format('woff2'),
-		url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.woff')
+		url('./fonts/boxicons.woff')
 			format('woff'),
-		url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.ttf')
+		url('./fonts/boxicons.ttf')
 			format('truetype'),
-		url('https://cdn.jsdelivr.net/npm/boxicons@2.0.5/fonts/boxicons.svg?#boxicons')
+		url('./fonts/boxicons.svg?#boxicons')
 			format('svg');
 	font-display: swap;
 }
